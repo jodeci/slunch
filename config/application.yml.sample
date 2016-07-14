@@ -1,8 +1,8 @@
 defaults: &defaults
   slack:
-    token: ''
-    channels: 
-      - ''
+    token: <%= ENV['SLACK_TOKEN'] %>
+    channels:
+      - <%= ENV['CHANNEL_TOKEN'] %> # bot_test
 
 development:
   <<: *defaults
