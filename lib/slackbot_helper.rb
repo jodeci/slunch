@@ -4,13 +4,13 @@ class SlackbotHelper
 
   def self.init
     Slack.configure do |config|
-      config.token = Settings.slack.token
+      config.token = SlackSettings.slack.token
     end
   end
 
   def self.chat message
     args = { as_user: true, text: message }
-    Settings.slack.channels.each do |channel|
+    SlackSettings.slack.channels.each do |channel|
       args[:channel] = channel
       Slack.chat_postMessage(args)
     end

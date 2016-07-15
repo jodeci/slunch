@@ -1,0 +1,15 @@
+br
+br
+.panel.panel-default
+  .panel-body
+    p#notice= notice
+    p
+      strong Name:
+      = @lunch.name
+    p
+      strong Location:
+      = @lunch.location
+    = link_to edit_lunch_path(@lunch)
+      span.glyphicon.glyphicon-edit
+    = link_to lunches_path
+      span.glyphicon.glyphicon-eye-open
