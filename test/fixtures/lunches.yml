@@ -4,7 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  name: 'subway'
+  location: '承德路'
+  phone: '1122'
+  description: '1122'
+
 # column: value
 #
 two: {}

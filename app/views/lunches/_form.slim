@@ -1,0 +1,30 @@
+.panel.panel-default
+  .panel-body
+    = form_for(@lunch) do |f|
+      - if @lunch.errors.any?
+        #error_explanation
+          h2
+            = pluralize(@lunch.errors.count, "error")
+            | prohibited this lunch from being saved:
+          ul
+            - @lunch.errors.full_messages.each do |message|
+              li= message
+      .field
+        = f.label :name
+        br/
+        = f.text_field :name, class: 'form-control'
+      .field
+        = f.label :location
+        br/
+        = f.text_field :location, class: 'form-control'
+      .field
+        = f.label :phone
+        br/
+        = f.text_field :phone, class: 'form-control'  
+      .field
+        = f.label :description
+        br/
+        = f.text_area :description, class: 'form-control' 
+        br/
+      .actions
+        = f.submit class: 'btn btn-primary pull-right'

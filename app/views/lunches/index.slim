@@ -1,0 +1,26 @@
+h1 Lunch List
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: "alert alert-success"
+table.table.table-striped.table-hover
+  thead
+    tr
+      th 餐廳
+      th 地點
+      th 電話
+      th 敘述
+      th colspan="1" 
+  tbody
+    - @lunches.each do |lunch|
+      tr
+        td= lunch.name
+        td= lunch.location
+        td= lunch.phone
+        td= lunch.description
+        td
+          = link_to edit_lunch_path(lunch)
+            span.glyphicon.glyphicon-edit
+        td
+          = link_to lunch, method: :delete, data: {confirm: 'Are you sure?'} 
+            span.glyphicon.glyphicon-remove
+
+= link_to 'New Lunch', new_lunch_path, class:'btn btn-danger pull-right'
